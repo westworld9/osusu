@@ -1,0 +1,10 @@
+<div class="container log col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">   
+<p><%= notice %></p>
+  
+ <% @blogs.each do |blog| %>　
+   <div class="right-content"> 
+     <h2><%= blog.title %></h2>
+     <p><%= link_to blog.content, blog_path(blog.id) %></p> 
+   </div> 
+　<% end %>  
+</div>

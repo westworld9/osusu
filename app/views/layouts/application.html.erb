@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Osusu</title>
+    <%= csrf_meta_tags %>
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #12b0b4;" > 
+      <div class="container">
+        <h2><a class="navbar-brand" href="/users/new">Osusu</a></h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <% if logged_in? %> 
+              <li class="nav-item"><%=link_to "投稿一覧", blogs_path, class:"nav-link" %></li>
+              <li class="nav-item"><%=link_to "新規投稿", new_blog_path, class:"nav-link" %></li>
+              <li class="nav-item"><%= link_to "プロフィール", user_path(current_user.id), class:"nav-link" %></li>
+              <li class="nav-item"><%= link_to "ログアウト", session_path(current_user.id), method: :delete, class:"nav-link" %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to "新規登録", new_user_path, class:"nav-link" %></li>
+              <li class="nav-item"><%= link_to "ログイン", new_session_path, class:"nav-link" %></li>
+            <% end %>
+          </ul>
+        </div> 
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

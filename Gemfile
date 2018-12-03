@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails' 
 gem 'bcrypt', '3.1.11'
-gem 'pry-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,6 +44,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'bcrypt', '3.1.11'
+  gem 'dotenv-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do

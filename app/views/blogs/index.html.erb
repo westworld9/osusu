@@ -1,6 +1,7 @@
 <div class="container log col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">   
-<p><%= notice %></p>
-  
+ <% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: "#{key} alert alert-info") %>
+ <% end %>
  <% @blogs.each do |blog| %>　
    <div class="right-content"> 
      <h2><%= blog.title %></h2>

@@ -6,7 +6,8 @@
  </div> 
  <% if @favorite_blogs.present? %>
  <% @favorite_blogs.each do |favorite_blogs| %>
-   <div class="right-content mt-5">  
+   <div class="right-content mt-5"> 
+     <p>投稿者: <%= favorite_blogs.user.name %></p>
      <h2><%= favorite_blogs.title %></h2>
      <p><%= link_to favorite_blogs.content, blog_path(favorite_blogs.id) %></p> 
    </div> 

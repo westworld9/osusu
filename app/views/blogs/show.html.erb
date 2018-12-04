@@ -2,6 +2,7 @@
 <p><%= notice %></p>
   
    <div class="right-content"> 
+     <p class="">投稿者: <%= @blog.user.name %></p>
      <h2><%= @blog.title %></h2>
      <p><%= @blog.content%></p>　
      <% if @blog.user_id == current_user.id %>
